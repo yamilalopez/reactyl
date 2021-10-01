@@ -1,13 +1,14 @@
 import React from 'react'
 import * as bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../NavBar/NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
   return (
     <div>
       <div>
-        <p>3 y 6 cuotas sin interés - Envíos a todo el país</p>
+        <p class="cuotas">3 y 6 cuotas sin interés - Envíos a todo el país</p>
       </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
@@ -38,7 +39,10 @@ const NavBar = () => {
         <li class="nav-item">
           <a class="nav-link" href="#">Contacto</a>
         </li>
-        <li class="nav-item">
+        
+      </ul>
+      <ul class="navbar-nav">
+      <li class="nav-item">
           <a class="nav-link" href="#"><CartWidget/></a>
         </li>
       </ul>
