@@ -10,7 +10,7 @@ const Item = ({nombre , stock , precio , img , addToCartWidget}) => {
       }
 
     function remove() {
-        if( cantidad > 1) setCantidad(cantidad - 1)
+        if( cantidad > 0) setCantidad(cantidad - 1)
       }
 
     return (
@@ -30,7 +30,7 @@ const Item = ({nombre , stock , precio , img , addToCartWidget}) => {
                   <div>
                     <button onClick={()=>addToCartWidget(cantidad)} className="btn btn-dark botonAgregar">Agregar al Carrito</button>
                   </div>
-                  <div>
+                  <div className="stock">
                     <p>Stock disponible: {stock}</p>
                   </div>
       </div>
