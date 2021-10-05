@@ -1,0 +1,13 @@
+.card {
+height: 300px;
+width: 300px;
+text-align: center;
+margin-top: 20px;
+margin-left: 20px;
+}
+
+.botonAgregar {
+    width: 200px;
+    
+    margin-top: 10px;
+}
