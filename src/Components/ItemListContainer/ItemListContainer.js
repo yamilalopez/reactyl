@@ -12,12 +12,12 @@ import {Col , Container , Row} from 'react-bootstrap';
 const ItemListContainer = ( {addToCartWidget} ) => {
 
   const items = [
-    {id:1 , nombre:"Funda Primitivo" , stock:7 , precio: 600 , img: funda1},
-    {id:2 , nombre:"Funda Maldivas" , stock:8 , precio: 600 , img: funda2},
-    {id:3 , nombre:"Funda Paris" , stock:7 , precio: 600 , img: funda3},
-    {id:4 , nombre:"Funda Calamity" , stock:6 , precio: 600 , img: funda4},
-    {id:5 , nombre:"Funda Lashes" , stock:9 , precio: 699 , img: funda5},
-    {id:6 , nombre:"Funda Porter" , stock:4 , precio: 850 , img: funda6},
+    {id:1 , nombre:"Funda Primitivo" , stock:7 , precio: 600 , img: funda1 , medidas: "40x40"},
+    {id:2 , nombre:"Funda Maldivas" , stock:8 , precio: 600 , img: funda2 , medidas: "40x40"},
+    {id:3 , nombre:"Funda Paris" , stock:7 , precio: 600 , img: funda3 , medidas: "40x40"},
+    {id:4 , nombre:"Funda Calamity" , stock:6 , precio: 600 , img: funda4 , medidas: "40x40"},
+    {id:5 , nombre:"Funda Lashes" , stock:9 , precio: 699 , img: funda5 , medidas: "50x30"},
+    {id:6 , nombre:"Funda Porter" , stock:4 , precio: 850 , img: funda6 , medidas: "45x45"},
 
   ]
 
@@ -32,6 +32,7 @@ const ItemListContainer = ( {addToCartWidget} ) => {
                 stock={item.stock}
                 precio={item.precio}
                 img={item.img}
+                medidas={item.medidas}
                 addToCartWidget={addToCartWidget}
             />
             </Col>
