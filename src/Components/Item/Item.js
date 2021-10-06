@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../Item/Item.css';
 
-const Item = ({nombre , stock , precio , img , addToCartWidget}) => {
+const Item = ({nombre , stock , precio , img , medidas , addToCartWidget}) => {
 
     const [cantidad , setCantidad] = useState(0)
 
@@ -20,7 +20,7 @@ const Item = ({nombre , stock , precio , img , addToCartWidget}) => {
             <img src={img} class="card-img-top" alt="..."/>
             <div class="card-body">
               <h5 class="card-title">{nombre}</h5>
-              <p class="card-text">Funda 40x40</p>
+              <p class="card-text">{medidas}</p>
               <p class="card-text">${precio}</p>
               <div className="">
                     <button onClick={()=>remove()} className="btn col-xs-6  botonCantidad">-</button>
