@@ -3,6 +3,7 @@ import * as bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../NavBar/NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
+import logo from '../img/logo.jpeg'
 
 const NavBar = () => {
   return (
@@ -10,19 +11,19 @@ const NavBar = () => {
       <div>
         <p class="cuotas">3 y 6 cuotas sin interés - Envíos a todo el país</p>
       </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Hawaii Deco</a>
+    <a class="navbar-brand" href="#"><img src={logo} className="imgNav"></img></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <li class="nav-item navText">
           <a class="nav-link active" aria-current="page" href="#">Inicio</a>
         </li>
         
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown navText">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Productos
           </a>
@@ -33,10 +34,10 @@ const NavBar = () => {
             <li><a class="dropdown-item" href="#">Jarrones/Floreros</a></li>
           </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item navText">
           <a class="nav-link" href="#">Favoritos</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item navText">
           <a class="nav-link" href="#">Contacto</a>
         </li>
         

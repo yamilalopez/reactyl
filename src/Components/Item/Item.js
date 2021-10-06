@@ -23,12 +23,12 @@ const Item = ({nombre , stock , precio , img , addToCartWidget}) => {
               <p class="card-text">Funda 40x40</p>
               <p class="card-text">${precio}</p>
               <div className="">
-                    <button onClick={()=>remove()} className="btn col-xs-6 btn-dark botonMenos">-</button>
+                    <button onClick={()=>remove()} className="btn col-xs-6  botonCantidad">-</button>
                     <span>Cantidad : {cantidad} </span>
-                    <button onClick={()=>add()} className="btn col-xs-6 btn-dark botonMenos">+</button>
+                    <button onClick={()=>add()} className="btn col-xs-6  botonCantidad">+</button>
                   </div>
                   <div>
-                    <button onClick={()=>addToCartWidget(cantidad)} className="btn btn-dark botonAgregar">Agregar al Carrito</button>
+                    <button onClick={()=>addToCartWidget(cantidad)} className="btn  botonAgregar">Agregar al Carrito</button>
                   </div>
                   <div className="stock">
                     <p>Stock disponible: {stock}</p>

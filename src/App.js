@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import NavBar from './components/NavBar/NavBar';
@@ -20,12 +20,16 @@ const App = () => {
 
 
   return (
-    <> 
-      <NavBar 
-      toggleMenu={toggleMenu}
-      carrito={carrito}/>
-      <ItemListContainer addToCartWidget={addToCartWidget}/>
-    </>
+    <body> 
+      <div>
+        <NavBar 
+        toggleMenu={toggleMenu}
+        carrito={carrito}/>
+      </div>
+      <div className="bodyItem">
+        <ItemListContainer addToCartWidget={addToCartWidget}/>
+      </div>
+    </body>
   );
 }
 

@@ -6,6 +6,8 @@ import funda3 from '../img/funda3.jpg';
 import funda4 from '../img/funda4.jpg';
 import funda5 from '../img/funda5.jpg';
 import funda6 from '../img/funda6.jpg';
+import {Col , Container , Row} from 'react-bootstrap';
+
 
 const ItemListContainer = ( {addToCartWidget} ) => {
 
@@ -20,19 +22,22 @@ const ItemListContainer = ( {addToCartWidget} ) => {
   ]
 
     return (
-        <div>
+        <Container>
+          <Row>
           {items.map((item =>
-          (<Item
+          <Col lg="4">
+          <Item
             key={item.id} 
                 nombre={item.nombre}
                 stock={item.stock}
                 precio={item.precio}
                 img={item.img}
                 addToCartWidget={addToCartWidget}
-            />)
-
+            />
+            </Col>
           ))}
-        </div>
+        </Row>
+        </Container>
     );
 };
 

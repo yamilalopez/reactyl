@@ -24,6 +24,11 @@
   color: white;
 }
 
+.bodyItem {
+  background-image: url(../src/components/img/costilla2.jpg);
+  background-repeat: no-repeat;
+}
+
 .App-link {
   color: #61dafb;
 }
