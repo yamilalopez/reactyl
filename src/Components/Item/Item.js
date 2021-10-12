@@ -3,14 +3,14 @@ import '../Item/Item.css';
 
 const Item = ({nombre , stock , precio , img , medidas , addToCartWidget}) => {
 
-    const [cantidad , setCantidad] = useState(0)
+    const [cantidad , setCantidad] = useState(1)
 
     function add() {
         if(cantidad <  stock) setCantidad(cantidad + 1)
       }
 
     function remove() {
-        if( cantidad > 0) setCantidad(cantidad - 1)
+        if( cantidad > 1) setCantidad(cantidad - 1)
       }
 
     return (
@@ -22,10 +22,10 @@ const Item = ({nombre , stock , precio , img , medidas , addToCartWidget}) => {
               <h5 class="card-title">{nombre}</h5>
               <p class="card-text">{medidas}</p>
               <p class="card-text">${precio}</p>
-              <div className="">
-                    <button onClick={()=>remove()} className="btn col-xs-6  botonCantidad">-</button>
+              <div className="controls">
+                    <button onClick={()=>remove()} className="btn botonCantidad">-</button>
                     <span>Cantidad : {cantidad} </span>
-                    <button onClick={()=>add()} className="btn col-xs-6  botonCantidad">+</button>
+                    <button onClick={()=>add()} className="btn botonCantidad">+</button>
                   </div>
                   <div>
                     <button onClick={()=>addToCartWidget(cantidad)} className="btn  botonAgregar">Agregar al Carrito</button>

@@ -3,7 +3,7 @@ import * as bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../NavBar/NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
-import logo from '../img/logo.jpeg'
+import logo from '../../img/logo.jpeg'
 
 const NavBar = () => {
   return (
@@ -32,6 +32,7 @@ const NavBar = () => {
             <li><a class="dropdown-item" href="#">Espejos</a></li>
             <li><a class="dropdown-item" href="#">Velas aromáticas</a></li>
             <li><a class="dropdown-item" href="#">Jarrones/Floreros</a></li>
+            <li><a class="dropdown-item" href="#">Almohadones</a></li>
           </ul>
         </li>
         <li class="nav-item navText">
