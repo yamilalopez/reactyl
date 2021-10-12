@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 const App = () => {
 
@@ -28,6 +29,7 @@ const App = () => {
       </div>
       <div className="bodyItem">
         <ItemListContainer addToCartWidget={addToCartWidget}/>
+        <ItemDetailContainer id={1} />
       </div>
     </body>
   );
