@@ -15,18 +15,18 @@ const [cantidad , setCantidad] = useState(1)
 
       return (
         <>
-        <div className="controls">
-            <button onClick={()=>remove()} className="btn botonCantidad">-</button>
-            <span>Cantidad : {cantidad} </span>
-            <button onClick={()=>add()} className="btn botonCantidad">+</button>
-      </div>
-      <div>
-            <button onClick={()=>addToCartWidget(cantidad)} className="btn  botonAgregar">Agregar al Carrito</button>
-      </div>
-      <div className="stock">
-        <p>Stock disponible: {stock}</p>
-      </div>
-      </>
+          <div className="controls">
+              <button onClick={()=>remove()} className="btn botonCantidad">-</button>
+              <span>Cantidad : {cantidad} </span>
+              <button onClick={()=>add()} className="btn botonCantidad">+</button>
+          </div>
+          <div>
+              <button onClick={()=>addToCartWidget(cantidad)} className="btn  botonAgregar">Agregar al Carrito</button>
+          </div>
+          <div className="stock">
+            <p>Stock disponible: {stock}</p>
+          </div>
+        </>
       );
     };
 

@@ -3,6 +3,7 @@ import '../Item/Item.css';
 
 const Item = ({nombre , precio , img , medidas , stock}) => {
     return (
+      <div class="container">
         <div class="row "> 
           <div class="col-sm-6">
             <div class="card">
@@ -16,6 +17,7 @@ const Item = ({nombre , precio , img , medidas , stock}) => {
             </div>
           </div>
         </div>
+      </div>
     )
 }
 

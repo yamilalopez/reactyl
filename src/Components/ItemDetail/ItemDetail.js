@@ -1,16 +1,17 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount';
+import './ItemDetail.css'
 import funda1 from '../../img/funda1.jpg';
 
 
 const ItemDetail = ({ item }) => {
     return (
-        <article>
-            <img src={funda1} />
-        <div>
-           <h2>{item.nombre}</h2>
-           <p>{item.descripcion}</p>
-                <ul>
+        <article>   
+        <div className="detail-info">
+        <img src={funda1} className="img-detail" />
+           <h2 className="nombre">{item.nombre}</h2>
+           <p className="descripcion">{item.descripcion}</p>
+                <ul className="info-grid">
                     <li>Precio:</li>
                     <li>${item.precio}</li>
                     <li>Medidas:</li>

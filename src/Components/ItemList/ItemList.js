@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import {Col , Container , Row} from 'react-bootstrap';
 import Item from '../Item/Item';
 import { getAllProductsFromDB } from '../../helpers/getData.js';
 
@@ -16,29 +15,26 @@ const ItemList = () => {
         <>
             {products.length ? (
                 <>
+                <div className="container">
+                <div className="row">
                     {
-                        products.map((product) => 
-                            {
-                                return (
-                                    <Container>
-                                        <Row>
-                                            <Col md="auto" lg="4">
-                                                <div key={product.id}>
-                                                    <Item
-                                                    nombre={product.nombre}
-                                                    stock={product.stock}
-                                                    precio={product.precio}
-                                                    img={product.img}
-                                                    medidas={product.medidas}
-                                                    />
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                    </Container>
-                                )
-                            }
-                        ) 
-                    }
+                        products.map((product) => (
+                            
+                            <div className="col-sm-12 col-md-6 col-lg-4">
+                                <Item
+                                key={product.id}
+                                nombre={product.nombre}
+                                stock={product.stock}
+                                precio={product.precio}
+                                img={product.img}
+                                medidas={product.medidas}
+                                />
+                            </div>
+                                
+                            ))
+                        }
+                    </div>
+                    </div> 
                 </>
             ) : (
                 <p>Cargando productos...</p>
