@@ -4,12 +4,12 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = ({ id }) => {
 
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState([null]);
 
     useEffect(() => {
-        getProductById(id, setProduct);
+        getProductById(parseInt (id), setProduct);
         console.log(product);
-      }, []);
+      }, [id]);
 
     return (
         <div>

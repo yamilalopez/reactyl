@@ -33,11 +33,11 @@ const App = () => {
           
             <div className="bodyItem">
             <Switch>
-            <Route exact path="/category">
+            <Route exact path="/products">
               <ItemListContainer />
             </Route>
 
-            <Route exact path="/category/:id">
+            <Route exact path="/products/:id">
               <ItemDetailContainer id={1} />
             </Route>
 
