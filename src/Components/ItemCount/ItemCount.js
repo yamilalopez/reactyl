@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../Item/Item.css';
+import agregarItem from '../../context/CartContext'
 
 
 const ItemCount = ({ remove , add , stock , addToCartWidget}) => {
@@ -27,7 +28,7 @@ const [cantidad , setCantidad] = useState(1)
             <div className="stock">
                 <p>Stock disponible: {stock}</p>
             </div>
-            { show && <button onClick={() => alert("¡Gracias por su compra!")} className="btn botonAgregar mb-5"> Finalizar Compra </button>}
+            { show && <button onClick={()=>agregarItem()} className="btn botonAgregar mb-5"> Finalizar Compra </button>}
         </div>
       );
     };

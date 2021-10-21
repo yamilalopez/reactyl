@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
 import funda1 from '../../img/funda1.jpg';
-import { Link } from 'react-router-dom';
+import { useCartContext } from '../../context/CartContext';
+import {AppContext} from '../../App'
 
 
 const ItemDetail = ({ item }) => {
+
+    const {state} = useContext(AppContext)
+    const {cartList , agregarItem} = useCartContext()
+
+    const onAdd=(cant) => {
+        agregarItem ({item: item , cantidad: cant})
+    }
+
     return (
         <article>   
         <div className="detail-info">
@@ -20,7 +29,7 @@ const ItemDetail = ({ item }) => {
                     <li>Medidas:</li>
                     <li>{item.medidas}</li>
                 </ul>
-            <ItemCount stock={item.stock} /> 
+            <ItemCount stock={item.stock} onAdd={onAdd}/> 
         </div>
         </article>
     )
