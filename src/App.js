@@ -9,6 +9,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import CartContextProvider from './context/CartContext';
 import { productsList } from './data/data';
 import { createContext } from 'react';
+import Cart from '../src/components/Cart/Cart'
 
 export const AppContext = createContext ()
 
@@ -33,13 +34,17 @@ function setearState (item) {
                   <ItemListContainer />
                 </Route>
 
-                <Route exact path="/products/:id">
-                  <ItemDetailContainer id={1} />
+                <Route exact path="/detail/:id">
+                  <ItemDetailContainer />
                 </Route>
 
                 <Route exact path="/" >
                     <Home />
                 </Route>
+
+                <Route exact path="/cart">
+                <Cart />
+              </Route>
               </Switch>
               
               </div>

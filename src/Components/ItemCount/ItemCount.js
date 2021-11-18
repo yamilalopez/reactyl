@@ -1,35 +1,45 @@
 import React, { useState } from 'react';
 import '../Item/Item.css';
-import agregarItem from '../../context/CartContext'
+import { Link } from 'react-router-dom';
 
 
-const ItemCount = ({ remove , add , stock , addToCartWidget}) => {
-const [cantidad , setCantidad] = useState(1)
+const ItemCount = ({stock, onAdd}) => {
+  let initial = 0
+  if (stock>0) {initial = 1};
 
-    function add() {
-        if(cantidad <  stock) setCantidad(cantidad + 1)
-      }
+  const [qAdd, setqAdd] = useState(initial);
 
-    function remove() {
-        if( cantidad > 1) setCantidad(cantidad - 1)
-      };
+  const remove = () => {
+    if (qAdd > 1) {
+      setqAdd(qAdd-1)
+    }
+  };
 
-      const [show, setShow]=useState(false);
+  const add = () => {
+    if (qAdd < stock) {
+      setqAdd(qAdd+1)
+    }
+  }
+
+  const [show, setShow]=useState(false);
+
       return (
-        <div>
-            <div className="controls">
-                <button onClick={()=>remove()} className="btn botonCantidad">-</button>
-                <span>Cantidad : {cantidad} </span>
-                <button onClick={()=>add()} className="btn botonCantidad">+</button>
-            </div>
-            <div>
-                <button onClick={()=>setShow(true)} className="btn botonAgregar">Agregar al Carrito</button>
-            </div>
-            <div className="stock">
-                <p>Stock disponible: {stock}</p>
-            </div>
-            { show && <button onClick={()=>agregarItem()} className="btn botonAgregar mb-5"> Finalizar Compra </button>}
+        <>
+          <div>
+          <div className="controls">
+            <button onClick={() => remove()} disabled={qAdd === 1 || qAdd === 0 ? true : null} className="botonCantidad">-</button>
+            <span>Cantidad: {qAdd} </span>
+            <button onClick={() => add()} disabled= {qAdd===stock?true:null} className="botonCantidad"> + </button>
+          </div>
+          <div>
+            <button onClick={() =>{ setShow(true); onAdd(qAdd)}} className="botonAgregar">Agregar al Carrito</button>
         </div>
+        <div className="stock">
+            <p>Stock disponible: {stock}</p>
+          </div>
+            { show && <Link to="/Cart"><button className="botonAgregar mb-5">Finalizar Compra</button></Link>}
+        </div>
+        </>
       );
     };
 

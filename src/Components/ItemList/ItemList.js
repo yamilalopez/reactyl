@@ -20,9 +20,10 @@ const ItemList = () => {
                     {
                         products.map((product) => (
                             
-                            <div className="col-sm-12 col-md-6 col-lg-4">
+                            <div className="col-sm-12 col-md-6 col-lg-4"
+                            key={product.id}>
                                 <Item
-                                key={product.id}
+                                id={product.id}
                                 nombre={product.nombre}
                                 stock={product.stock}
                                 precio={product.precio}

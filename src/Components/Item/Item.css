@@ -13,13 +13,20 @@ margin-left: 30px;
 .controls {
     display: flex;
     justify-content: space-between;
-    padding: 0 30px;
+    padding: 0 40px;
+}
+
+.stock {
+    font-size: small;
+    padding-top: 3px;
 }
 
 .botonAgregar {
     width: 200px;
     margin-top: 10px;
     background-color: #EADEB8;
+    border: none;
+    border-radius: 5px;
 }
 
 .botonCantidad {
@@ -31,10 +38,15 @@ margin-left: 30px;
     align-items: center;
     justify-content: center;
     background-color: #EADEB8;
+    border: none;
+    border-radius: 5px;
 }
 
 .botonVerMas {
     background-color: #EADEB8;
     margin-top: -5px;
+    border: none;
+    border-radius: 5px;
+    
 }
 

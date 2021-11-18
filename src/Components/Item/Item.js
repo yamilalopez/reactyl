@@ -1,8 +1,21 @@
 import ItemCount from '../ItemCount/ItemCount';
 import '../Item/Item.css';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
+import { useContext } from 'react'; 
+
+
 
 const Item = ({nombre , precio , img , medidas , stock , id}) => {
+  
+  const cartContext = useContext(CartContext)
+  const {addItem} = cartContext;
+  const onAdd = (qty) => {
+    addItem({nombre , precio , img , id}, qty)
+  }
+
+
+
     return (
       <div class="container">
         <div class="row "> 
@@ -11,13 +24,12 @@ const Item = ({nombre , precio , img , medidas , stock , id}) => {
               <img src={img} class="card-img-top" alt="..."/>
               <div class="card-body">
                 <h5 class="card-title">{nombre}</h5>
-                <p class="card-text">{medidas}</p>
-                <p class="card-text">${precio}</p>
-                <Link to={`/products/${id}`} >
-                <button className="btn col-xs-6 botonVerMas"> Ver más </button>
+                <p class="card-text">{medidas} | ${precio}</p>
+                <Link to={`/detail/${id}`} >
+                <button className="col-xs-6 botonVerMas"> Ver más </button>
                 </Link> 
               </div>
-              <ItemCount stock={stock} />
+              <ItemCount stock={stock} onAdd={onAdd} />
             </div>
           </div>
         </div>

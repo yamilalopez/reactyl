@@ -1,38 +1,57 @@
-import React, { useContext } from 'react'
-import ItemCount from '../ItemCount/ItemCount';
-import './ItemDetail.css'
-import funda1 from '../../img/funda1.jpg';
-import { useCartContext } from '../../context/CartContext';
-import {AppContext} from '../../App'
+import React, { useState } from "react";
+import { useContext } from 'react';
+import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
+const ItemDetail = ({nombre , precio , img , id , descripcion , stock }) => {
+  const cartContext = useContext(CartContext);
+  const { addItem } = cartContext;
+ 
+  const onAdd = (qty) => {
+    addItem({nombre , precio , img , id}, qty)
+  }
 
-const ItemDetail = ({ item }) => {
+  const [show, setShow] = useState(false);
 
-    const {state} = useContext(AppContext)
-    const {cartList , agregarItem} = useCartContext()
+  const [hide, setHide] = useState(true);
 
-    const onAdd=(cant) => {
-        agregarItem ({item: item , cantidad: cant})
-    }
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="card mt-5 mb-5 col-md-6">
+          <img src={img} className="card-img-top" alt="..." />
 
-    return (
-        <article>   
-        <div className="detail-info">
-        <img src={funda1} className="img-detail" />
-  
-            <h2 className="nombre">{item.nombre}</h2>
+          <h2>{nombre}</h2>
 
-           <p className="descripcion">{item.descripcion}</p>
-                <ul className="info-grid">
-                    <li>Precio:</li>
-                    <li>${item.precio}</li>
-                    <li>Medidas:</li>
-                    <li>{item.medidas}</li>
-                </ul>
-            <ItemCount stock={item.stock} onAdd={onAdd}/> 
+          <ul className="info-grid">
+            
+            <li>Precio ${precio}</li>
+          </ul>
+
+          <p className="descripcion">{descripcion}</p>
+          {hide ? (
+            <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+          ) : null}
+
+          {show ? (
+            <Link to={"/cart"}>
+              <button className="btn btn-dark botonAgregar btn__detail mb-1">
+                Finalizar Compra
+              </button>
+            </Link>
+          ) : null}
+          {show ? (
+            <Link to={"/products"}>
+              <button className="btn btn-dark botonAgregar btn__detail mb-5">
+                Seguir Comprando
+              </button>
+            </Link>
+          ) : null}
         </div>
-        </article>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default ItemDetail
+export default ItemDetail;
